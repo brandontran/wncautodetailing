@@ -1,0 +1,612 @@
+<!-- 
+    Simplicity is the ultimate sophistication. 
+        - Leonardo da Vinci
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WNC Auto Detailing - Asheville, NC</title>
+    <meta name="twitter:title" content="WNC Auto Detailing - Asheville, NC"/>
+    <meta property="og:title" content="WNC Auto Detailing - Asheville, NC"/>
+	
+	<meta name="description" content=""/>
+	<meta name="twitter:description" content=""/>
+    <meta property="og:description" content=""/>
+    
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary"/>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="utf-8">
+	
+<style>
+/* RESET */
+html, body {
+    margin: 0; padding: 0;
+}
+
+/* Smooth Scroll Behaivior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* BODY */
+body {
+    color: #444444;
+    background-color: #ffffff;
+}
+
+
+
+
+/* Buttons */
+.primary {
+	display: inline-block;
+	padding: 12px 24px;
+	background-color: rgba(0,0,0,.4);
+	color: #ffffff;
+	border: 1px solid #fff;
+	border-radius: 2px;
+	text-decoration: none;
+}
+
+
+
+
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+}
+
+
+
+
+/* LISTS */
+li { margin-bottom: 12px; }
+
+
+/* HOVER EFFECTS */
+a {
+  opacity: 1;
+}
+a:hover {
+  opacity: .7;
+}
+
+
+/* Link Colors */
+a {
+  color: #337ab7;
+}
+a:hover {
+  color: #5bc0de;
+}
+a:visted {
+  color: #326270;
+}
+
+
+/* HELPERS */
+
+/* Text Alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-justify { text-align: justify; }
+h1, h2, h3 {
+    text-align: center;
+}
+
+
+/* MOBILE */
+@media all and (max-width:700px){
+   
+}
+
+
+
+@media print {
+  body {
+    width:100%
+  }
+  *{
+    -webkit-print-color-adjust:exact
+  }
+}
+
+
+/* TYPOGRAPHY */
+
+/* DEFAULT */
+body {
+    font-family: 'Helvetica';
+    font-size: 1.6em;
+}
+p {
+    line-height: 1.5;
+}
+h1 {
+    margin-top: 0;
+	
+}
+h2 {
+    margin-top: 0;
+}
+h3 {
+    margin-top: 0;
+}
+h4 {
+    margin-top: 0;
+}
+.small {
+    font-size: 12px;
+}
+
+.hero h1, .hero h2, .hero h3, .hero h4 {
+    margin-bottom: 12px;
+}
+
+/* TABLET */
+@media all and (min-width: 701px) and (max-width: 1400px) {
+    body {
+        font-size: 1.8em;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+}
+/* MOBILE */
+@media all and (max-width:700px) {
+    body {
+        font-size: 1.4em;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    h3 {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+/* PRIMARY SECTIONS */
+section {
+    padding: 10vw 4vw;
+    box-sizing: border-box;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Simple Gallery */
+.gallery { 
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  grid-gap: 20px;
+}
+
+.gallery figure {
+  flex: auto;
+  height: auto;
+  width: 23%;
+  min-width: 150px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.gallery img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2 column for some */
+.gallery figure:nth-child(5),
+.gallery figure:nth-child(6),
+.gallery figure:nth-child(11),
+.gallery figure:nth-child(12) {
+  width: 45%;
+}
+
+@media all and (max-width:700px) {
+    .gallery figure {
+        width: 40%;
+        min-width: 100px;
+    }
+}
+
+
+
+/* HERO */
+section.hero {
+    min-height: 90vh;
+    color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    /* padding-bottom: 20vw; */
+    position: relative;
+    overflow: hidden;
+    max-width: none;
+}
+.hero video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* object-fit: fill; */
+    min-width: 100vw;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+.hero .small {
+    opacity: .8;
+    margin-bottom: 0;
+}
+/* Wrapping A Little Text */
+.hero h2 { max-width: 520px; }
+@media all and (max-width:700px) {
+    .hero h2 { max-width: 356px; }
+}
+
+
+
+/* Logo */
+.hero .logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+    margin-bottom: 12px;
+}
+.hero h2 { font-size: 1.6rem; }
+
+@media all and (max-width:700px) {
+    .hero .logo { max-width: 140px; }
+    .hero h2 { font-size: 1.2rem; }
+}
+
+/* Accessibility Animation Pause Play Controller */
+.video-control {
+    position: absolute;
+    bottom: 4vw;
+    right: 4vw;
+    width: 44px;
+    height: 44px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,.6);
+    font-size: 22px;
+    line-height: 22px;
+    text-align: center;
+    color: rgba(255,255,255,.8);
+    margin: 0;
+    padding: 3px 0 0 3px;
+} 
+.video-control img {
+    width: 100%;
+    height: 100%;
+}
+.video-control.pause:before,
+.video-control.pause:after {
+    position: absolute;
+    left: 13px;
+    top: 12px;
+    content: "";
+    width: 6px;
+    height: 20px;
+    background-color: rgba(255,255,255,.8);
+} 
+.video-control.pause:after {
+    left: auto;
+    right: 13px;
+}
+.video-control.pause span {
+    display: none;
+}
+
+@media all and (max-width:500px) {
+    .video-control { transform: scale(.8); }
+}
+
+/* Video Dark Overlay */
+.hero:after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.7) 20%, rgba(0,0,0,0) 100%);
+}
+
+
+/* Nav */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 68px;
+    background-color: rgba(0,0,0,.8);
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    /* box-shadow: 0 0 15px rgba(0,0,0,.8); */
+}
+/* Ul Reset */
+nav ul,
+nav li {
+   margin:0;
+   padding: 0;
+   text-indent: 0;
+   list-style-type: none;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+}
+nav a {
+    color: #f1f1f1;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    text-shadow: 0 0 15px rgba(0,0,0,.8);
+}
+@media all and (max-width:700px) {
+    nav {
+        height: 58px;
+    }
+    nav a {
+        padding: 12px 8px;
+        font-size: 16px;
+    }
+}
+
+
+/* Reviews */
+.review {
+    padding: 28px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+}
+.review .secondary {
+    opacity: .7;
+}
+.stars5 {
+    display: inline-block;
+    width: 125px;
+    background-repeat: repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAWCAYAAAA1vze2AAAAqUlEQVR4AWLwySwkGv/YzgworgwwAIphGHqJXWgX6nl6q55o/GHxCX4bUx9hMK9JYwucFSmAubW2ZifED8Q7IXEgcmRqVNDsgBhBrAMSBJEiqwAGAaBRhiDvBk1A3mkRyb2CXSYLlmWFnbArffoMIrjS6qy3Sm/Z/068CPEbyKpKhfCDyA0yNE95MKtRGe9LiSz9O3hKclv6Y76ictQzqbmjyhIkyVi+8wCta5MKDP5AeAAAAABJRU5ErkJggg==);
+    background-size:25px 22px; 
+    height: 22px;
+    margin-right: 8px;
+}
+.review h4, .review p {
+    margin: 8px 0;
+}
+
+
+/* Social */
+.social {
+    display: inline-block;
+    font-size: 0;
+    width: 60px;
+    height: 60px;
+    margin: 8px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.icon-tiktok {
+    background-image: url('images/icon-tiktok-96.png');
+}
+.icon-instagram {
+    background-image: url('images/icon-instagram-96.png');
+}
+.icon-facebook {
+    background-image: url('images/icon-facebook-96.png');
+}
+
+</style>
+
+
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>    
+
+    <section class="hero">
+        <img src="images/logo-white.png" class="logo" width="100" height="100" alt="WNC Auto Detailing, Asheville, NC Logo">
+		<h1>WNC Auto Detailing</h1>
+		<h2>Professional Car Detailing in Asheville, NC and Surrounding Areas</h2>
+
+        <p class="small">Call or Text</p>
+        <h3>(828) 455-3700</h3>
+
+        <video playsinline autoplay="true" id="heroVideo" loop="true" muted="true" 
+            data-desktop-src="media/hero-desktop.mp4" 
+            data-mobile-src="media/hero-mobile.mp4"></video>
+        
+        <button class="video-control pause" id="videoControl"><span>&#9654;</span></button>
+    </section>
+
+
+	<section id="gallery">
+		<h2>Detail Gallery</h2>
+		<h3>Shining examples in Western North Carolina</h3>
+        <div class="gallery">
+            <figure><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure><img src="gallery/image4.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure><img src="gallery/image5.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure><img src="gallery/image6.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure><img src="gallery/image7.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure><img src="gallery/image8.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy"></figure>
+        </div>
+	</section>
+
+
+    <section id="pricing">
+        <h2>Full Detail Pricing</h2>
+        Cars: $250
+        Mid-Size SUV and Trucks: $325
+        Large SUV and Trucks: $400
+
+        <p>
+            Exterior- Pre- Wash with foam cannon, Hand Wash to avoid swirls and scratches,
+            Hand Dry with special towels, Blow Dry tight spaces, Machine Wax, Deep clean and
+            dress tires and wheels, Trim protectant, and Glass Cleaning.
+        </p>
+
+        <p>
+            Interior: deep Vacuum, steam clean interior for superior disinfecting, spot clean
+            carpet and seats, Protectant on vinyl, plastics, and leather surfaces, degrease and
+            clean Door Jams, deodorize cabin, Pet hair removal
+        </p>
+        
+
+        <h3>Additional Services</h3>
+        <ul>
+            <li>Ceramic Coating - $500 - $1,000</li>
+            <li>Ceramic Trim Restore - $100 - $200</li>
+            <li>Machine Polish - $50</li>
+            <li>Full Interior Shampoo - $100</li>
+            <li>Headlight Restoration - $50</li>
+            <li>Paint Correction-Price Varies</li>
+            <li>Water Spot Removal - Price Varies</li>
+        </ul>
+    </section>
+
+
+    <section id="reviews">
+        <h2>Reviews</h2>
+        <h3>5.0 <i class="stars5"></i> 4 reviews</h3>
+
+        <div class="review">
+            <h4>Dr. Taylor MacLean</h4>
+            <p><i class="stars5"></i>4 weeks ago</p>
+            <p>These guys are profesional, timely and provide quality detail work that will have your car better than brand new! I didn’t know it was possible to correct some of the scratches on car until I used these guys! You will definitely be impressed!</p>
+            <p class="secondary">Services: Clay bar treatment, Full body wash, Wheel washing, Auto interior vacuuming, Seat shampooing, Headlight polishing, Paint repair, Steam cleaning, Auto detailing</p>
+        </div>
+
+        <div class="review">
+            <h4>Nez Popko</h4>
+            <p><i class="stars5"></i>3 weeks ago</p>
+            <p>These guys do a great job i brought 2 cars and i'm very happy, fast and quality, if you want your car like new, contact them i recommend</p>
+        </div>
+
+        <div class="review">
+            <h4>Kaitlin Lunsford</h4>
+            <p><i class="stars5"></i>3 weeks ago</p>
+            <p>My husband and i have been using them for months and have nothing but amazing things to say. 10/10 recommend them to anyone looking for any auto detailing services of any kind!</p>
+            <p class="secondary">Services: Full body wash, Auto detailing</p>
+        </div>
+        
+        <div class="review">
+            <h4>Martha Navarro</h4>
+            <p><i class="stars5"></i>3 weeks ago</p>
+            <p>My car desperately needed a deep cleaning before selling it. WNC was able to get years of stains out of my cloth interior and scratches out of my clear coat. These guys are great!</p>   
+            <p class="secondary">Services: Clay bar treatment, Full body wash, Wheel washing, Auto interior vacuuming, Seat shampooing, Interior scenting, Steam cleaning, Auto detailing</p>
+        </div>
+
+    </section>
+	
+
+
+    <section id="contact" class="text-center">
+        <h2>Contact Us</h2>
+        <p>Call or Text</p>
+        <h2>(828) 455-3700</h2>
+        <p>
+            <a class="social icon-instagram" href="https://www.instagram.com/wnc_auto_detail/">Instagram</a>
+            <a class="social icon-tiktok" href="tiktok">TikTok</a>
+            <a class="social icon-facebook" href="facebook">Facebook</a>
+        </p>
+
+    </section>
+
+
+
+	<footer>
+		&copy; 2022 WNC Auto Detailing
+	</footer>
+	
+
+    <script>
+        // Video Controller
+        var heroVideo = document.getElementById('heroVideo');
+        var videoControl = document.getElementById('videoControl');
+    
+        if (videoControl && heroVideo) {
+            
+            videoControl.addEventListener('click', ()=>{
+                if (videoControl.classList.contains('pause')) {
+                    heroVideo.pause();
+                    videoControl.classList.remove('pause');
+                } else {
+                    heroVideo.play();
+                    videoControl.classList.add('pause');
+                }
+            });
+        }
+
+        // Video Responsive Source Changer
+        var videoDesktopSource = heroVideo.getAttribute('data-desktop-src');
+        var videoMobileSource = heroVideo.getAttribute('data-mobile-src');
+        
+        function selectVideoSrc() {
+            var width = window.innerWidth;
+            console.log('width', width);
+            
+            if (width >= 900) {
+                if (heroVideo.src.replace(window.location.href, '') != videoDesktopSource) {
+                    console.log(heroVideo.src.replace(window.location.href, ''), videoDesktopSource);
+                    heroVideo.src = videoDesktopSource;
+                } else {
+                    // Do nothing
+                }
+            } else {
+                if (heroVideo.src.replace(window.location.href, '') != videoMobileSource) {
+                    console.log(heroVideo.src.replace(window.location.href, ''), videoMobileSource);
+                    heroVideo.src = videoMobileSource;
+                } else {
+                    // Do nothing
+                }
+            }
+        }
+        
+        selectVideoSrc();
+        window.addEventListener('resize', selectVideoSrc);
+
+    </script>
+
+</body>
+</html>

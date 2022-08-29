@@ -1,0 +1,297 @@
+/* RESET */
+html, body {
+    margin: 0; padding: 0;
+}
+
+/* BODY */
+body {
+    color: #444444;
+    background-color: #ffffff;
+}
+
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    line-height: 70px;
+    background-color: #fff;
+    text-align: center;
+    z-index: 5;
+    box-shadow: 0 0 30px rgba(0,0,0,.2);
+}
+
+.logo {
+  text-decoration: none;
+  color: #444444;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+.icon-home {
+  background-image: url('https://storage.googleapis.com/brandontran-196302.appspot.com/icon-home.png');
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center center;
+  width: 70px;
+  height: 70px;
+  vertical-align: top;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0;
+}
+
+/* ICON TRANSITIONS */
+.icon-home,
+.logo {
+  transition: transform 300ms;
+}
+
+.icon-home:hover,
+.logo:hover {
+  transform: scale(1.2);
+}
+
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    background-image: url('https://storage.googleapis.com/brandontran-196302.appspot.com/hero-brandon-wendy-tran-bridge-opt.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    overflow: hidden;
+    background-color: #444444;
+    color: #ffffff;
+    margin-bottom: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 30vw;
+    padding-bottom: 10vw;
+}
+@media all and (max-width:700px) {
+    .hero {
+        min-height: 90vh;
+        padding-top: 20vw;
+        background-image: url('https://storage.googleapis.com/brandontran-196302.appspot.com/hero-brandon-wendy-tran-bridge-mobile-opt.jpg');
+    }
+}
+.hero h1 {
+    font-weight: bold;
+
+    margin: 0;
+}
+.hero h2 {
+    margin: 0;
+    max-width: 900px;
+}
+
+
+/* PRIMARY SECTIONS */
+section {
+    padding: 2.5vw 5vw;
+    box-sizing: border-box;
+}
+article {
+    padding: 100px 5vw 5vw 5vw;
+    box-sizing: border-box;
+}
+
+
+/* GRID */
+.grid {
+    text-align: center;
+}
+
+.grid-item {
+    display: inline-block;
+    width: 100%;
+    padding: 1vw;
+    box-sizing: border-box;
+    max-width: 50%;
+}
+
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+}
+
+
+
+
+/* FORMS */
+input[type="text"] {
+  padding: 8px;
+  font-size: 1em;
+}
+
+/* LISTS */
+li { margin-bottom: 12px; }
+
+
+/* HOVER EFFECTS */
+a, .icon-search {
+  opacity: 1;
+}
+a:hover,
+.icon-search:hover {
+  opacity: .7;
+}
+
+
+/* Link Colors */
+a {
+  color: #337ab7;
+}
+a:hover {
+  color: #5bc0de;
+}
+a:visted {
+  color: #326270;
+}
+
+
+/* Articles */
+.youtube_iframe {
+    display: block;
+    margin: 0 auto;
+    background-color: black;
+    height: 500px;
+    width: 100%;
+    border: none;
+}
+
+
+/* IMAGES */
+img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Image GALLERY */
+.gallery {
+    font-size: 0;
+    text-align: left;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.gallery img {
+    max-width: 25%;
+    vertical-align: top;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: transform 200ms;
+}
+
+
+
+/* HELPERS */
+
+/* Text Alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-justify { text-align: justify; }
+
+.maxw400 {
+  max-width: 400px;
+}
+.maxw400 img {
+  display: inline-block;
+  width: 100%;
+}
+
+
+
+/* MOBILE */
+@media all and (max-width:700px){
+    .icon-home {
+        width: 60px;
+        height: 60px;
+    }
+    nav {
+        height: 60px;
+        line-height: 60px;
+    }
+    .youtube_iframe {
+        height: 300px;
+    }
+    .gallery img {
+        width: 33.333%;
+    }
+    .grid-item {
+        max-width: 100%;
+    }
+}
+
+
+
+@media print {
+  body {
+    width:100%
+  }
+  *{
+    -webkit-print-color-adjust:exact
+  }
+}
+
+
+/* TYPOGRAPHY */
+
+/* DEFAULT */
+body {
+    font-family: 'Arial';
+    font-size: 2em;
+}
+p {
+    line-height: 1.5;
+}
+.hero h1 {
+    font-size: 5rem;
+    letter-spacing: -1px;
+}
+.hero h2 {
+    font-size: 2.4rem;
+}
+/* TABLET */
+@media all and (min-width: 701px) and (max-width: 1400px) {
+    body {
+        font-size: 1.8em;
+    }
+    .hero h1 {
+        font-size: 4rem;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+/* MOBILE */
+@media all and (max-width:700px) {
+    body {
+        font-size: 1.4em;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+}
+
+article h2 {
+    margin-top: 7vw;
+}
+h1, h2, h3, h4, h5 {
+    text-align: center;
+    font-weight: normal;
+}
