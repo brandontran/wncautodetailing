@@ -30,13 +30,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* BODY */
-body {
-    color: #444444;
-    background-color: #ffffff;
-}
-
-
 
 
 /* Buttons */
@@ -67,25 +60,21 @@ footer {
 li { margin-bottom: 12px; }
 
 
-/* HOVER EFFECTS */
+/* Links and HOVER EFFECTS */
 a {
-  opacity: 1;
+    color: #337ab7;
+    opacity: .8;
 }
 a:hover {
-  opacity: .7;
+    opacity: 1;
+}
+a:active {
+    opacity: 1;
+}
+a:visted { 
+    opacity: .7;
 }
 
-
-/* Link Colors */
-a {
-  color: #337ab7;
-}
-a:hover {
-  color: #5bc0de;
-}
-a:visted {
-  color: #326270;
-}
 
 
 /* HELPERS */
@@ -128,16 +117,17 @@ p {
 }
 h1 {
     margin-top: 0;
-	
 }
 h2 {
     margin-top: 0;
 }
 h3 {
     margin-top: 0;
+    font-weight: normal;
 }
 h4 {
     margin-top: 0;
+    font-weight: normal;
 }
 .small {
     font-size: 12px;
@@ -150,7 +140,7 @@ h4 {
 /* TABLET */
 @media all and (min-width: 701px) and (max-width: 1400px) {
     body {
-        font-size: 1.8em;
+        font-size: 1.4em;
     }
     h1 {
         font-size: 2rem;
@@ -165,7 +155,7 @@ h4 {
 /* MOBILE */
 @media all and (max-width:700px) {
     body {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
     h1 {
         font-size: 1.8rem;
@@ -220,13 +210,21 @@ section {
 .gallery figure:nth-child(6),
 .gallery figure:nth-child(11),
 .gallery figure:nth-child(12) {
-  width: 45%;
+  width: 40%;
 }
-
+/* Mobile Gallery  */
 @media all and (max-width:700px) {
     .gallery figure {
         width: 40%;
         min-width: 100px;
+    }
+
+    /* 2 column for some */
+    .gallery figure:nth-child(3),
+    .gallery figure:nth-child(6),
+    .gallery figure:nth-child(9),
+    .gallery figure:nth-child(12) {
+    width: 95%;
     }
 }
 
@@ -241,21 +239,39 @@ section.hero {
     align-items: center;
     justify-content: flex-end;
     text-align: center;
-    /* padding-bottom: 20vw; */
+    padding-top: 60px;
+    padding-bottom: 60px;
     position: relative;
     overflow: hidden;
     max-width: none;
+    background: none !important; /* Important to cancel any override */
 }
 .hero video {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    /* object-fit: fill; */
-    min-width: 100vw;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: -1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
 }
+section.hero * {
+    text-shadow: 0 0 15px rgba(0,0,0,.8);
+}
+/* Video Dark Overlay */
+.hero:after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.7) 20%, rgba(0,0,0,0) 100%);
+}
+
 .hero .small {
     opacity: .8;
     margin-bottom: 0;
@@ -286,8 +302,8 @@ section.hero {
 /* Accessibility Animation Pause Play Controller */
 .video-control {
     position: absolute;
-    bottom: 4vw;
-    right: 4vw;
+    bottom: 20px;
+    right: 20px;
     width: 44px;
     height: 44px;
     border: none;
@@ -327,18 +343,6 @@ section.hero {
     .video-control { transform: scale(.8); }
 }
 
-/* Video Dark Overlay */
-.hero:after {
-    position: absolute;
-    z-index: -1;
-    content: "";
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.7) 20%, rgba(0,0,0,0) 100%);
-}
-
 
 /* Nav */
 nav {
@@ -366,7 +370,7 @@ nav ul {
     align-items: center;
 }
 nav a {
-    color: #f1f1f1;
+    color: #ffffff;
     display: inline-block;
     padding: 12px 24px;
     font-size: 18px;
@@ -425,11 +429,50 @@ nav a {
     background-image: url('images/icon-facebook-96.png');
 }
 
+
+/* Day Night Scheme */
+/* Default BODY Color Theme */
+.light { 
+    background: #fff;
+    color: #444444;
+}
+.dark { 
+    background: #000; 
+    color: #f1f1f1; 
+}
+
+.light section:nth-child(even) {
+    background: linear-gradient(0deg, rgba(245,245,245,.4) 0%, rgba(245,245,245,.7) 100%);
+}
+.dark section:nth-child(even) {
+    background: linear-gradient(0deg, rgba(17,17,17,.4) 0%, rgba(23,23,23,.7) 100%);
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #fff;
+        color: #444;
+    }
+    section:nth-child(even) {
+        background: linear-gradient(0deg, rgba(245,245,245,.4) 0%, rgba(245,245,245,.7) 100%);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body { 
+        background: #000; 
+        color: #f1f1f1; 
+    }
+    section:nth-child(even) {
+        background: linear-gradient(0deg, rgba(17,17,17,.4) 0%, rgba(23,23,23,.7) 100%);
+    }
+}
+
 </style>
 
 
 </head>
-<body>
+<body class="dark">
 
     <nav>
         <ul>
@@ -460,16 +503,18 @@ nav a {
 		<h2>Detail Gallery</h2>
 		<h3>Shining examples in Western North Carolina</h3>
         <div class="gallery">
-            <figure><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure><img src="gallery/image4.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure><img src="gallery/image5.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure><img src="gallery/image6.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure><img src="gallery/image7.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure><img src="gallery/image8.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-1"><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-2"><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-3"><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-4"><img src="gallery/image4.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-5"><img src="gallery/image5.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-6"><img src="gallery/image6.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-7"><img src="gallery/image7.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-8"><img src="gallery/image8.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-9"><img src="gallery/image9.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-10"><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-11"><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-12"><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy"></figure>
         </div>
 	</section>
 
@@ -543,7 +588,7 @@ nav a {
 
     <section id="contact" class="text-center">
         <h2>Contact Us</h2>
-        <p>Call or Text</p>
+        <p class="small">Call or Text</p>
         <h2>(828) 455-3700</h2>
         <p>
             <a class="social icon-instagram" href="https://www.instagram.com/wnc_auto_detail/">Instagram</a>
@@ -551,14 +596,10 @@ nav a {
             <a class="social icon-facebook" href="facebook">Facebook</a>
         </p>
 
+        <footer class="small">
+            &copy; 2022 WNC Auto Detailing
+        </footer>
     </section>
-
-
-
-	<footer>
-		&copy; 2022 WNC Auto Detailing
-	</footer>
-	
 
     <script>
         // Video Controller
