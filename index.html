@@ -71,7 +71,6 @@ a:hover {
 }
 a:active {
     opacity: 1;
-    text-shadow:1px 1px 10px #fff;
 }
 a:visted { 
     opacity: .7;
@@ -106,10 +105,10 @@ h1, h2, h3 {
 /* DEFAULT */
 body {
     font-family: 'Helvetica';
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 p {
-    line-height: 1.4;
+    line-height: 1.5;
 }
 h1 {
     margin-top: 0;
@@ -136,7 +135,7 @@ h4 {
 /* TABLET */
 @media all and (min-width: 701px) and (max-width: 1400px) {
     body {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
     h1 {
         font-size: 2rem;
@@ -278,10 +277,10 @@ section.hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     text-align: center;
     padding-top: 80px;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     position: relative;
     overflow: hidden;
     max-width: none;
@@ -311,7 +310,7 @@ section.hero * {
 
 @media all and (max-width:700px) {
     section.hero {
-        min-height: 90vh;
+        min-height: 95vh;
     }
 }
 /* Video Dark Overlay */
@@ -343,13 +342,14 @@ section.hero * {
     display: block;
     width: 100%;
     height: auto;
-    max-width: 220px;
+    max-width: 300px;
     margin-bottom: 12px;
+    opacity: .9;
 }
 .hero h2 { font-size: 1.6rem; }
 
 @media all and (max-width:700px) {
-    .hero .logo { max-width: 160px; }
+    .hero .logo { max-width: 180px; }
     .hero h2 { font-size: 1.2rem; }
 }
 
@@ -563,7 +563,7 @@ tr:nth-child(even) {
             data-mobile-src="media/hero-mobile.mp4"
             poster="media/poster-low-res.jpg"
             loop muted autoplay playsinline></video>
-        <button class="video-control pause" id="videoControl"><span>&#9654;</span></button>
+        <button class="video-control pause" id="videoControl" aria-label="Play and Pause Video"><span>&#9654;</span></button>
     </section>
 
         
@@ -592,19 +592,19 @@ tr:nth-child(even) {
 
         <div class="grid">
             <div class="item">
-                <h3>Cars</h3>
+                <h3>Cars & Compacts</h3>
                 <h4>$250</h4>
-                <img src="images/auto-small.png" alt="Cars Image" loading="lazy" width="600" height="423">
+                <img src="images/auto-small.png" alt="Cars Image" loading="lazy" width="332" height="233">
             </div>
             <div class="item">
-                <h3>Mid-Size SUV and Trucks</h3>
+                <h3>Mid-Size SUV & Trucks</h3>
                 <h4>$325</h4>
-                <img src="images/auto-medium.png" alt="Mid-Size SUV and Trucks Image" loading="lazy" width="600" height="423">
+                <img src="images/auto-medium.png" alt="Mid-Size SUV and Trucks Image" loading="lazy" width="332" height="233">
             </div>
             <div class="item">
-                <h3>Large SUV and Trucks</h3>
+                <h3>Large SUV & Trucks</h3>
                 <h4>$400</h4>
-                <img src="images/auto-large.png" alt="Large SUV and Trucks Image" loading="lazy" width="600" height="423">
+                <img src="images/auto-large.png" alt="Large SUV and Trucks Image" loading="lazy" width="332" height="233">
             </div>
         </div>
 
@@ -731,19 +731,14 @@ tr:nth-child(even) {
         var videoMobileSource = heroVideo.getAttribute('data-mobile-src');
         function selectVideoSrc() {
             var width = window.innerWidth;
-            console.log('width', width);
             
             if (width >= 900) {
                 if (heroVideo.src.replace(window.location.href, '') != videoDesktopSource) {
-                    console.log(heroVideo.src.replace(window.location.href, ''), videoDesktopSource);
                     heroVideo.src = videoDesktopSource;
-                    console.log('video desktop');
                 }
             } else {
                 if (heroVideo.src.replace(window.location.href, '') != videoMobileSource) {
-                    console.log(heroVideo.src.replace(window.location.href, ''), videoMobileSource);
                     heroVideo.src = videoMobileSource;
-                    console.log('video mobile');
                 }
             }
         }
@@ -754,11 +749,9 @@ tr:nth-child(even) {
         document.addEventListener('scroll', function () {
             if (window.scrollY - videoHeight > videoHeight) {
                 // hideVideo
-                console.log('hide video', window.scrollY - videoHeight, videoHeight);
                 heroVideo.style.display = 'none';
             } else {
                 // showVideo
-                console.log('show video', window.scrollY - videoHeight, videoHeight);
                 heroVideo.style.display = 'block';
             }
         });
@@ -779,14 +772,12 @@ tr:nth-child(even) {
             }
         }
 
-        /**
-         * Bind all hashtag links as native scroll actions
-         */
+        // Bind all hashtag links as native scroll actions
         function scrollToTargetInit() {
             var scrollToLinks = document.querySelectorAll('[href^="#"]');
 
             if (scrollToLinks.length > 0) {
-                scrollToLinks.forEach((scrollToLink) => {
+                scrollToLinks.forEach(function (scrollToLink) {
                     scrollToLink.addEventListener('click', scrollToTargetId);
                 });
             }
