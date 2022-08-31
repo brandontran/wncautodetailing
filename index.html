@@ -9,9 +9,9 @@
     <meta name="twitter:title" content="WNC Auto Detailing - Asheville, NC"/>
     <meta property="og:title" content="WNC Auto Detailing - Asheville, NC"/>
 	
-	<meta name="description" content=""/>
-	<meta name="twitter:description" content=""/>
-    <meta property="og:description" content=""/>
+	<meta name="description" content="Professional Car Detailing in Asheville, NC and Surrounding Areas. Auto detailing with a southern hospitality touch."/>
+	<meta name="twitter:description" content="Professional Car Detailing in Asheville, NC and Surrounding Areas. Auto detailing with a southern hospitality touch."/>
+    <meta property="og:description" content="Professional Car Detailing in Asheville, NC and Surrounding Areas. Auto detailing with a southern hospitality touch."/>
     
     <meta property="og:type" content="website"/>
     <meta name="twitter:card" content="summary"/>
@@ -26,9 +26,9 @@ html, body {
 }
 
 /* Smooth Scroll Behaivior */
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 
 
@@ -50,7 +50,7 @@ html {
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 40px;
+    padding: 40px 0;
 }
 
 
@@ -67,9 +67,11 @@ a {
 }
 a:hover {
     opacity: 1;
+    text-shadow:1px 1px 10px #fff;
 }
 a:active {
     opacity: 1;
+    text-shadow:1px 1px 10px #fff;
 }
 a:visted { 
     opacity: .7;
@@ -85,12 +87,6 @@ a:visted {
 .text-justify { text-align: justify; }
 h1, h2, h3 {
     text-align: center;
-}
-
-
-/* MOBILE */
-@media all and (max-width:700px){
-   
 }
 
 
@@ -110,10 +106,10 @@ h1, h2, h3 {
 /* DEFAULT */
 body {
     font-family: 'Helvetica';
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 p {
-    line-height: 1.5;
+    line-height: 1.4;
 }
 h1 {
     margin-top: 0;
@@ -173,13 +169,59 @@ h4 {
 
 /* PRIMARY SECTIONS */
 section {
-    padding: 10vw 4vw;
+    padding: 12vw;
     box-sizing: border-box;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+}
+@media all and (max-width:700px) {
+    section {
+        padding: 18vw 4vw;
+    }   
 }
 
+/* Simple Grid */
+.grid { 
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    max-width: 1000px;
+    grid-gap: 20px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.grid .item {
+    flex: auto;
+    height: auto;
+    width: 23%;
+    min-width: 150px;
+    margin: 0;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4vw;
+    border: 1px solid rgba(245,245,245,.3);
+    border-image-slice:1;
+    border-image-source: linear-gradient(-45deg,rgba(245,245,245,.3), rgba(45,45,45,.6));
+}
+
+.grid .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+}
+/* Mobile Grid  */
+@media all and (max-width:700px) {
+    .grid { 
+        grid-gap: 12px;
+    }
+    .grid .item {
+        padding: 4vw 0;
+    }
+}
 
 
 /* Simple Gallery */
@@ -229,39 +271,51 @@ section {
 }
 
 
-
 /* HERO */
 section.hero {
-    min-height: 90vh;
+    min-height: 100vh;
     color: #f9f9f9;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     text-align: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 80px;
+    padding-bottom: 50px;
     position: relative;
     overflow: hidden;
     max-width: none;
-    background: none !important; /* Important to cancel any override */
+    background: transparent !important; /* Important to cancel any override */
+    margin: 0;
+}
+
+/* Add text shadow to all text */
+section.hero * {
+    text-shadow: 0 0 15px rgba(0,0,0,.8);
+}
+
+.hero a {
+    color: #ffffff;
 }
 .hero video {
-    position: absolute;
-    left: 0;
+    position: fixed;
     top: 0;
-    bottom: 0;
+    left: 0;
     right: 0;
+    bottom: 0;
     height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: -2;
 }
-section.hero * {
-    text-shadow: 0 0 15px rgba(0,0,0,.8);
+
+@media all and (max-width:700px) {
+    section.hero {
+        min-height: 90vh;
+    }
 }
 /* Video Dark Overlay */
-.hero:after {
+/* .hero:after {
     position: absolute;
     z-index: -1;
     content: "";
@@ -270,7 +324,7 @@ section.hero * {
     bottom: 0;
     right: 0;
     background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.7) 20%, rgba(0,0,0,0) 100%);
-}
+} */
 
 .hero .small {
     opacity: .8;
@@ -289,13 +343,13 @@ section.hero * {
     display: block;
     width: 100%;
     height: auto;
-    max-width: 180px;
+    max-width: 220px;
     margin-bottom: 12px;
 }
 .hero h2 { font-size: 1.6rem; }
 
 @media all and (max-width:700px) {
-    .hero .logo { max-width: 140px; }
+    .hero .logo { max-width: 160px; }
     .hero h2 { font-size: 1.2rem; }
 }
 
@@ -369,20 +423,23 @@ nav ul {
     display: flex;
     align-items: center;
 }
+
 nav a {
     color: #ffffff;
     display: inline-block;
-    padding: 12px 24px;
+    padding: 0 24px;
     font-size: 18px;
     text-shadow: 0 0 15px rgba(0,0,0,.8);
+    line-height: 68px;
 }
 @media all and (max-width:700px) {
     nav {
         height: 58px;
     }
     nav a {
-        padding: 12px 8px;
+        padding: 0 8px;
         font-size: 16px;
+        line-height: 58px;
     }
 }
 
@@ -431,21 +488,13 @@ nav a {
 
 
 /* Day Night Scheme */
-/* Default BODY Color Theme */
-.light { 
-    background: #fff;
-    color: #444444;
-}
-.dark { 
+/* Default BODY Color Theme Dark */
+body { 
     background: #000; 
     color: #f1f1f1; 
 }
-
-.light section:nth-child(even) {
-    background: linear-gradient(0deg, rgba(245,245,245,.4) 0%, rgba(245,245,245,.7) 100%);
-}
-.dark section:nth-child(even) {
-    background: linear-gradient(0deg, rgba(17,17,17,.4) 0%, rgba(23,23,23,.7) 100%);
+section:nth-child(even) {
+    background: linear-gradient(0deg, #0d0d0d 0%, #111111 100%);
 }
 
 @media (prefers-color-scheme: light) {
@@ -453,8 +502,11 @@ nav a {
         background-color: #fff;
         color: #444;
     }
+    section {
+        background: #fff;    
+    }
     section:nth-child(even) {
-        background: linear-gradient(0deg, rgba(245,245,245,.4) 0%, rgba(245,245,245,.7) 100%);
+        background: linear-gradient(0deg, #f1f1f1 0%, #f2f2f2 100%);
     }
 }
 
@@ -463,16 +515,30 @@ nav a {
         background: #000; 
         color: #f1f1f1; 
     }
+    section {
+        background: #000; 
+    }
     section:nth-child(even) {
-        background: linear-gradient(0deg, rgba(17,17,17,.4) 0%, rgba(23,23,23,.7) 100%);
+        background: linear-gradient(0deg, #0d0d0d 0%, #111111 100%);
     }
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid rgba(245,245,245,.1);
+    padding: 16px 8px;
+}
+tr:nth-child(even) {
+    background: rgba(46,45,45, .1);
+}
 </style>
 
 
 </head>
-<body class="dark">
+<body>
 
     <nav>
         <ul>
@@ -484,70 +550,111 @@ nav a {
     </nav>    
 
     <section class="hero">
-        <img src="images/logo-white.png" class="logo" width="100" height="100" alt="WNC Auto Detailing, Asheville, NC Logo">
+        <img src="images/logo.png" class="logo" width="100" height="100" alt="WNC Auto Detailing, Asheville, NC Logo">
 		<h1>WNC Auto Detailing</h1>
 		<h2>Professional Car Detailing in Asheville, NC and Surrounding Areas</h2>
 
         <p class="small">Call or Text</p>
         <h3>(828) 455-3700</h3>
 
-        <video playsinline autoplay="true" id="heroVideo" loop="true" muted="true" 
+        <video id="heroVideo" 
+            type="video/mp4"
             data-desktop-src="media/hero-desktop.mp4" 
-            data-mobile-src="media/hero-mobile.mp4"></video>
-        
+            data-mobile-src="media/hero-mobile.mp4"
+            poster="media/poster-low-res.jpg"
+            loop muted autoplay playsinline></video>
         <button class="video-control pause" id="videoControl"><span>&#9654;</span></button>
     </section>
 
-
+        
 	<section id="gallery">
 		<h2>Detail Gallery</h2>
 		<h3>Shining examples in Western North Carolina</h3>
         <div class="gallery">
-            <figure class="item-1"><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-2"><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-3"><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-4"><img src="gallery/image4.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-5"><img src="gallery/image5.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-6"><img src="gallery/image6.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-7"><img src="gallery/image7.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-8"><img src="gallery/image8.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-9"><img src="gallery/image9.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-10"><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-11"><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy"></figure>
-            <figure class="item-12"><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy"></figure>
+            <figure class="item-1"><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-2"><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-3"><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-4"><img src="gallery/image4.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-5"><img src="gallery/image5.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-6"><img src="gallery/image6.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-7"><img src="gallery/image7.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-8"><img src="gallery/image8.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-9"><img src="gallery/image9.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-10"><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-11"><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-12"><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
         </div>
 	</section>
 
 
     <section id="pricing">
         <h2>Full Detail Pricing</h2>
-        Cars: $250
-        Mid-Size SUV and Trucks: $325
-        Large SUV and Trucks: $400
 
+        <div class="grid">
+            <div class="item">
+                <h3>Cars</h3>
+                <h4>$250</h4>
+                <img src="images/auto-small.png" alt="Cars Image" loading="lazy" width="600" height="423">
+            </div>
+            <div class="item">
+                <h3>Mid-Size SUV and Trucks</h3>
+                <h4>$325</h4>
+                <img src="images/auto-medium.png" alt="Mid-Size SUV and Trucks Image" loading="lazy" width="600" height="423">
+            </div>
+            <div class="item">
+                <h3>Large SUV and Trucks</h3>
+                <h4>$400</h4>
+                <img src="images/auto-large.png" alt="Large SUV and Trucks Image" loading="lazy" width="600" height="423">
+            </div>
+        </div>
+
+        <h3>Included In Every Wash</h3>
         <p>
-            Exterior- Pre- Wash with foam cannon, Hand Wash to avoid swirls and scratches,
-            Hand Dry with special towels, Blow Dry tight spaces, Machine Wax, Deep clean and
-            dress tires and wheels, Trim protectant, and Glass Cleaning.
+            <b>Exterior:</b> Pre-wash with foam cannon, wand wash to avoid swirls and scratches,
+            hand dry with special towels, blow dry tight spaces, machine wax, deep clean and
+            dress tires and wheels, trim protectant, and glass cleaning.
         </p>
 
         <p>
-            Interior: deep Vacuum, steam clean interior for superior disinfecting, spot clean
-            carpet and seats, Protectant on vinyl, plastics, and leather surfaces, degrease and
-            clean Door Jams, deodorize cabin, Pet hair removal
+            <b>Interior:</b> Deep vacuum, steam clean interior for superior disinfecting, spot clean
+            carpet and seats, protectant on vinyl, plastics, and leather surfaces, degrease and
+            clean door jams, deodorize cabin, and pet hair removal.
         </p>
         
 
         <h3>Additional Services</h3>
-        <ul>
-            <li>Ceramic Coating - $500 - $1,000</li>
-            <li>Ceramic Trim Restore - $100 - $200</li>
-            <li>Machine Polish - $50</li>
-            <li>Full Interior Shampoo - $100</li>
-            <li>Headlight Restoration - $50</li>
-            <li>Paint Correction-Price Varies</li>
-            <li>Water Spot Removal - Price Varies</li>
-        </ul>
+        <table>
+            <tr>
+                <td>Ceramic Coating</td>
+                <td>$500 - $1,000</td>
+            </tr>
+            <tr>
+                <td>Ceramic Trim Restore</td>
+                <td>$100 - $200</td>
+            </tr>
+            <tr>
+                <td>Machine Polish</td>
+                <td>$50</td>
+            </tr>
+            <tr>
+                <td>Full Interior Shampoo</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Headlight Restoration</td>
+                <td>$50</td>
+            </tr>
+            <tr>
+                <td>Paint Correction</td>
+                <td>Price Varies</td>
+            </tr>
+            <tr>
+                <td>Water Spot Removal</td>
+                <td>Price Varies</td>
+            </tr>
+            
+        </table>
+        
     </section>
 
 
@@ -591,9 +698,9 @@ nav a {
         <p class="small">Call or Text</p>
         <h2>(828) 455-3700</h2>
         <p>
-            <a class="social icon-instagram" href="https://www.instagram.com/wnc_auto_detail/">Instagram</a>
-            <a class="social icon-tiktok" href="tiktok">TikTok</a>
-            <a class="social icon-facebook" href="facebook">Facebook</a>
+            <a class="social icon-instagram" href="https://www.instagram.com/wnc_auto_detail/" target="_blank">Instagram</a>
+            <a class="social icon-tiktok" href="https://www.tiktok.com/@wnc_auto_detailing" target="_blank">TikTok</a>
+            <a class="social icon-facebook" href="facebook" target="_blank">Facebook</a>
         </p>
 
         <footer class="small">
@@ -602,7 +709,7 @@ nav a {
     </section>
 
     <script>
-        // Video Controller
+        // Video Pause Play Controller
         var heroVideo = document.getElementById('heroVideo');
         var videoControl = document.getElementById('videoControl');
     
@@ -622,7 +729,6 @@ nav a {
         // Video Responsive Source Changer
         var videoDesktopSource = heroVideo.getAttribute('data-desktop-src');
         var videoMobileSource = heroVideo.getAttribute('data-mobile-src');
-        
         function selectVideoSrc() {
             var width = window.innerWidth;
             console.log('width', width);
@@ -631,22 +737,61 @@ nav a {
                 if (heroVideo.src.replace(window.location.href, '') != videoDesktopSource) {
                     console.log(heroVideo.src.replace(window.location.href, ''), videoDesktopSource);
                     heroVideo.src = videoDesktopSource;
-                } else {
-                    // Do nothing
+                    console.log('video desktop');
                 }
             } else {
                 if (heroVideo.src.replace(window.location.href, '') != videoMobileSource) {
                     console.log(heroVideo.src.replace(window.location.href, ''), videoMobileSource);
                     heroVideo.src = videoMobileSource;
-                } else {
-                    // Do nothing
+                    console.log('video mobile');
                 }
             }
         }
-        
         selectVideoSrc();
-        window.addEventListener('resize', selectVideoSrc);
+        
+        // On Scroll Hide Video for below the fold
+        var videoHeight = heroVideo.clientHeight;
+        document.addEventListener('scroll', function () {
+            if (window.scrollY - videoHeight > videoHeight) {
+                // hideVideo
+                console.log('hide video', window.scrollY - videoHeight, videoHeight);
+                heroVideo.style.display = 'none';
+            } else {
+                // showVideo
+                console.log('show video', window.scrollY - videoHeight, videoHeight);
+                heroVideo.style.display = 'block';
+            }
+        });
 
+
+        // ScrollTo Anchor
+        function scrollToTargetId(e) {
+            e.preventDefault();
+            var targetId;
+            if (e.currentTarget) {
+                var href = e.currentTarget.getAttribute('href');
+                targetId = document.querySelector(href);
+            }
+
+            if (targetId) {
+                var position = targetId.offsetTop;
+                window.scrollTo({ top: position, behavior: 'smooth' });
+            }
+        }
+
+        /**
+         * Bind all hashtag links as native scroll actions
+         */
+        function scrollToTargetInit() {
+            var scrollToLinks = document.querySelectorAll('[href^="#"]');
+
+            if (scrollToLinks.length > 0) {
+                scrollToLinks.forEach((scrollToLink) => {
+                    scrollToLink.addEventListener('click', scrollToTargetId);
+                });
+            }
+        }
+        scrollToTargetInit();
     </script>
 
 </body>
