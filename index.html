@@ -25,13 +25,6 @@ html, body {
     margin: 0; padding: 0;
 }
 
-/* Smooth Scroll Behaivior */
-/* html {
-  scroll-behavior: smooth;
-} */
-
-
-
 /* Buttons */
 .primary {
 	display: inline-block;
@@ -43,22 +36,11 @@ html, body {
 	text-decoration: none;
 }
 
-
-
-
-
 /* FOOTER */
 footer {
     text-align: center;
     padding: 40px 0;
 }
-
-
-
-
-/* LISTS */
-li { margin-bottom: 12px; }
-
 
 /* Links and HOVER EFFECTS */
 a {
@@ -238,6 +220,7 @@ section {
   min-width: 150px;
   margin: 0;
   box-sizing: border-box;
+  border: 2px solid transparent;
 }
 
 .gallery img {
@@ -287,6 +270,11 @@ section.hero {
     background: transparent !important; /* Important to cancel any override */
     margin: 0;
 }
+@media all and (max-width:700px) {
+    section.hero {
+        min-height: 90vh;
+    }
+}
 
 /* Add text shadow to all text */
 section.hero * {
@@ -306,12 +294,6 @@ section.hero * {
     width: 100%;
     object-fit: cover;
     z-index: -2;
-}
-
-@media all and (max-width:700px) {
-    section.hero {
-        min-height: 95vh;
-    }
 }
 /* Video Dark Overlay */
 /* .hero:after {
@@ -394,9 +376,15 @@ section.hero * {
 }
 
 @media all and (max-width:500px) {
-    .video-control { transform: scale(.8); }
+    .video-control { 
+        transform: scale(.8); 
+        bottom: 40px;
+    }
 }
 
+
+/* Default LISTS */
+li { margin-bottom: 12px; }
 
 /* Nav */
 nav {
@@ -409,7 +397,6 @@ nav {
     display: flex;
     justify-content: center;
     z-index: 2;
-    /* box-shadow: 0 0 15px rgba(0,0,0,.8); */
 }
 /* Ul Reset */
 nav ul,
@@ -493,6 +480,9 @@ body {
     background: #000; 
     color: #f1f1f1; 
 }
+section {
+    background: #000;
+}
 section:nth-child(even) {
     background: linear-gradient(0deg, #0d0d0d 0%, #111111 100%);
 }
@@ -516,13 +506,14 @@ section:nth-child(even) {
         color: #f1f1f1; 
     }
     section {
-        background: #000; 
+        background: #000;
     }
     section:nth-child(even) {
         background: linear-gradient(0deg, #0d0d0d 0%, #111111 100%);
     }
 }
 
+/* Table Styling  */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -571,18 +562,21 @@ tr:nth-child(even) {
 		<h2>Detail Gallery</h2>
 		<h3>Shining examples in Western North Carolina</h3>
         <div class="gallery">
-            <figure class="item-1"><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-2"><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-3"><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-4"><img src="gallery/image4.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-5"><img src="gallery/image5.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-6"><img src="gallery/image6.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-7"><img src="gallery/image7.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-8"><img src="gallery/image8.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-9"><img src="gallery/image9.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-10"><img src="gallery/image1.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-11"><img src="gallery/image2.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
-            <figure class="item-12"><img src="gallery/image3.jpeg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-6"><img src="gallery/car-image6.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-4"><img src="gallery/car-image4.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-5"><img src="gallery/car-image5.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-10"><img src="gallery/car-image10.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+
+            <figure class="item-2"><img src="gallery/car-image2.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-3"><img src="gallery/car-image3.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            
+            <figure class="item-7"><img src="gallery/car-image7.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-8"><img src="gallery/car-image8.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-1"><img src="gallery/car-image1.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-9"><img src="gallery/car-image9.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            
+            <figure class="item-11"><img src="gallery/car-image11.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
+            <figure class="item-12"><img src="gallery/car-image12.jpg" alt="Gallery Image" loading="lazy" width="600" height="600"></figure>
         </div>
 	</section>
 
@@ -614,19 +608,17 @@ tr:nth-child(even) {
             hand dry with special towels, blow dry tight spaces, machine wax, deep clean and
             dress tires and wheels, trim protectant, and glass cleaning.
         </p>
-
         <p>
             <b>Interior:</b> Deep vacuum, steam clean interior for superior disinfecting, spot clean
             carpet and seats, protectant on vinyl, plastics, and leather surfaces, degrease and
             clean door jams, deodorize cabin, and pet hair removal.
         </p>
-        
 
         <h3>Additional Services</h3>
         <table>
             <tr>
                 <td>Ceramic Coating</td>
-                <td>$500 - $1,000</td>
+                <td>Price Varies</td>
             </tr>
             <tr>
                 <td>Ceramic Trim Restore</td>
@@ -634,7 +626,7 @@ tr:nth-child(even) {
             </tr>
             <tr>
                 <td>Machine Polish</td>
-                <td>$50</td>
+                <td>$100</td>
             </tr>
             <tr>
                 <td>Full Interior Shampoo</td>
@@ -652,27 +644,41 @@ tr:nth-child(even) {
                 <td>Water Spot Removal</td>
                 <td>Price Varies</td>
             </tr>
-            
         </table>
-        
     </section>
-
 
     <section id="reviews">
         <h2>Reviews</h2>
-        <h3>5.0 <i class="stars5"></i> 4 reviews</h3>
+        <h3>5.0 <i class="stars5"></i> 7 reviews</h3>
+
+        
 
         <div class="review">
-            <h4>Dr. Taylor MacLean</h4>
-            <p><i class="stars5"></i>4 weeks ago</p>
-            <p>These guys are profesional, timely and provide quality detail work that will have your car better than brand new! I didn’t know it was possible to correct some of the scratches on car until I used these guys! You will definitely be impressed!</p>
-            <p class="secondary">Services: Clay bar treatment, Full body wash, Wheel washing, Auto interior vacuuming, Seat shampooing, Headlight polishing, Paint repair, Steam cleaning, Auto detailing</p>
+            <h4>Joshua Rodriguez</h4>
+            <p><i class="stars5"></i>4 days ago</p>
+            <p>Best detail I ever had!</p>   
+            <p class="secondary">Services: Steam cleaning, Car waxing, Full body wash, Interior scenting, Seat shampooing, Headlight polishing, Auto interior vacuuming, Wheel washing, Clay bar treatment, Auto detailing</p>
         </div>
 
         <div class="review">
-            <h4>Nez Popko</h4>
+            <h4>Chris Stierwalt</h4>
+            <p><i class="stars5"></i>5 days ago</p>
+            <p>These guys are the best car detailers in Asheville. They have done both of our cars and they have left looking brand new. I highly recommend them.</p>   
+            <p class="secondary">Services: Car waxing, Full body wash, Seat shampooing, Auto interior vacuuming, Wheel washing, Auto detailing</p>
+        </div>
+
+        <div class="review">
+            <h4>Libby Entinger</h4>
+            <p><i class="stars5"></i>6 days ago</p>
+            <p>So happy with the service. My car looks better than when I bought it new. Ruby thanks you! The owners were kind and caring and paid attention to detail. I will definitely be returning.</p>   
+            <p class="secondary">Service: Auto detailing</p>
+        </div>
+
+        <div class="review">
+            <h4>Martha Navarro</h4>
             <p><i class="stars5"></i>3 weeks ago</p>
-            <p>These guys do a great job i brought 2 cars and i'm very happy, fast and quality, if you want your car like new, contact them i recommend</p>
+            <p>My car desperately needed a deep cleaning before selling it. WNC was able to get years of stains out of my cloth interior and scratches out of my clear coat. These guys are great!</p>   
+            <p class="secondary">Services: Clay bar treatment, Full body wash, Wheel washing, Auto interior vacuuming, Seat shampooing, Interior scenting, Steam cleaning, Auto detailing</p>
         </div>
 
         <div class="review">
@@ -683,15 +689,19 @@ tr:nth-child(even) {
         </div>
         
         <div class="review">
-            <h4>Martha Navarro</h4>
+            <h4>Nez Popko</h4>
             <p><i class="stars5"></i>3 weeks ago</p>
-            <p>My car desperately needed a deep cleaning before selling it. WNC was able to get years of stains out of my cloth interior and scratches out of my clear coat. These guys are great!</p>   
-            <p class="secondary">Services: Clay bar treatment, Full body wash, Wheel washing, Auto interior vacuuming, Seat shampooing, Interior scenting, Steam cleaning, Auto detailing</p>
+            <p>These guys do a great job i brought 2 cars and i'm very happy, fast and quality, if you want your car like new, contact them i recommend</p>
+        </div>
+
+        <div class="review">
+            <h4>Dr. Taylor MacLean</h4>
+            <p><i class="stars5"></i>4 weeks ago</p>
+            <p>These guys are profesional, timely and provide quality detail work that will have your car better than brand new! I didn’t know it was possible to correct some of the scratches on car until I used these guys! You will definitely be impressed!</p>
+            <p class="secondary">Services: Clay bar treatment, Full body wash, Wheel washing, Auto interior vacuuming, Seat shampooing, Headlight polishing, Paint repair, Steam cleaning, Auto detailing</p>
         </div>
 
     </section>
-	
-
 
     <section id="contact" class="text-center">
         <h2>Contact Us</h2>
@@ -700,9 +710,8 @@ tr:nth-child(even) {
         <p>
             <a class="social icon-instagram" href="https://www.instagram.com/wnc_auto_detail/" target="_blank">Instagram</a>
             <a class="social icon-tiktok" href="https://www.tiktok.com/@wnc_auto_detailing" target="_blank">TikTok</a>
-            <a class="social icon-facebook" href="facebook" target="_blank">Facebook</a>
-        </p>
 
+        </p>
         <footer class="small">
             &copy; 2022 WNC Auto Detailing
         </footer>
